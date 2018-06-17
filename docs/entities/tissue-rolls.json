@@ -1,0 +1,120 @@
+{
+	"tissueRoll": [{
+		"id": "1",
+		"quantity": null,
+		"diameter": {
+			"mandatory": true,
+			"measure": "mm",
+			"label": "diameter",
+			"value": {
+				"min": 14.50,
+				"target": 15.00,
+				"max": 15.5
+			}
+		},
+		"coreType": {
+			"mandatory": true,
+			"measure": null,
+			"label": "core type",
+			"value": {
+				"min": null,
+				"target": "white",
+				"max": null
+			}
+		},
+		"sheet": {
+			"mandatory": true,
+			"measure": "qty",
+			"label": "sheet",
+			"value": {
+				"min": null,
+				"target": 250,
+				"max": null
+			}
+		},
+		"mts": {
+			"mandatory": true,
+			"measure": "mts",
+			"label": "mts",
+			"value": {
+				"min": null,
+				"target": 25,
+				"max": null
+			}
+		},
+		"perforation": {
+			"mandatory": true,
+			"measure": "mm",
+			"label": "perforation",
+			"value": {
+				"min": null,
+				"target": 100,
+				"max": null
+			}
+		},
+		"width": {
+			"mandatory": true,
+			"measure": "mm",
+			"label": "width",
+			"value": {
+				"min": null,
+				"target": 101,
+				"max": null
+			}
+		},
+		"grammaje": {
+			"mandatory": true,
+			"measure": "g/m^2",
+			"label": "grammaje",
+			"value": {
+				"min": null,
+				"target": 15,
+				"max": null
+			}
+		},
+		"numberPLY": {
+			"mandatory": true,
+			"measure": null,
+			"label": "number of ply",
+			"value": {
+				"min": null,
+				"target": "2 PLY",
+				"max": null
+			}
+		},
+		"packPresentation": {
+			"mandatory": true,
+			"measure": "qty",
+			"label": "pack presentation",
+			"value": {
+				"min": null,
+				"target": [2, 12, 24],
+				"max": 18
+
+			}
+		},
+		"numberPacksBags": {
+			"mandatory": true,
+			"measure": "qty",
+			"label": "number of pack/bags",
+			"value": {
+				"min": null,
+				"target": 96,
+				"max": 108
+
+			}
+		},
+		"printOption": {
+			"mandatory":true,
+			"measure":null,
+			"label":"print option",
+			"valute": false
+		},
+		"embossing": {
+			"mandatory": true,
+			"measure": null,
+			"label": "embossing",
+			"valute": false
+		}
+	}]
+}

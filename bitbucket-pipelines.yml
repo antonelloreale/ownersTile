@@ -1,0 +1,14 @@
+pipelines:
+  default:
+    - step:
+        name: Build artifact
+        image: node:9
+        caches:
+          - node
+        script:
+          - yarn
+          - yarn lint
+          - yarn build
+        artifacts:
+          - corcovado/build/**
+

@@ -1,0 +1,31 @@
+{
+	"bid": {
+		"id": "1",
+		"date": "Fri, 02 Feb 2026",
+		"status": ["new", "approval", "negotiation", "win", "wip", "lost"],
+		"economics": 50.000,
+		"company": {
+			"name": "PaperCutter ACME inc.",
+			"address": "10, Main Road Springfield"
+		},
+		"contact": {
+			"email": "sam.seller@papercutter.com",
+			"number": "+12345690"
+		},
+		"timeOfContact": "15.00 - 16.00",
+		"delivery": {
+			"plant": [{
+				"address": "10, Main Road Springfield",
+				"name": "Plant A"
+			},
+			{
+				"address": "10,North Avenue Wintergarden",
+				"name": "Plant B"
+			}
+			],
+			"date": "Fri, 02 Mar 2026"
+		
+		},
+		"additionalNote": "I want to sell the paper"
+	}
+}
