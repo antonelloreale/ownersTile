@@ -66,9 +66,9 @@ Here the structure of the global project
 
   - Redux connected component
     ```shell
-    $ yarn generate containers
+    $ yarn generate container
     ```
-    
+
 - Linting
   ```shell
   $ yarn lint
@@ -77,8 +77,8 @@ Here the structure of the global project
 ## Requirements
 
 - Node >= 10.1  
-- React create app >= 
-- Storybook CLI >= 2.X
+- [React create app](https://www.npmjs.com/package/create-react-app) >= 1.5.2
+- [Storybook](https://storybook.js.org/) CLI >= 2.X
 
 ## Acknowledge
 
