@@ -1,11 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 {{#if wantMessages}}
+import {FormattedMessage} from 'react-intl';
 import messages from './messages';
 {{/if}}
 
-import {Wrap} from './styles'
+import {Wrap} from './styles';
 
 class {{ properCase name }} extends {{{ type }}} { 
 
@@ -16,21 +17,14 @@ class {{ properCase name }} extends {{{ type }}} {
 
   render() {
     return (
-      <Wrap>
-      {{#if wantMessages}}
-        {messages.header.defaultMessage}
-      {{/if}}
+      <Wrap>{{#if wantMessages}}<FormattedMessage {...messages.header} />{{/if}}
       </Wrap>
     );
   }
 }
 
-{{ properCase name }}.propTypes = {
+{{ properCase name }}.propTypes = {};
 
-};
-
-{{ properCase name }}.defaultProps = {
-
-};
+{{ properCase name }}.defaultProps = {};
 
 export default {{ properCase name }};

@@ -7,6 +7,26 @@ This architecture is designed for agencies, the boilerplate provides a fast and 
 ## What you get 
 
 ### Folder structure 
+Here the structure of the global project
+```
+.
+├── .storybook                    # Contains storybook config
+├── docs                          # 
+│   └── entityes                  # Contains project entity models
+├── internals                     # Internal scripts
+├── public                        # Webpack base 
+├── src                           
+│   ├── components                # Components 
+│   |   └── component             # Component folder
+│   |       ├── index.js
+│   |       └── styles.js
+│   ├── containers                # Redux connected components
+│   ├── stores                    # Entity models
+│   ├── utils                     # Useful functions
+│   ├── constants                 # Global constants
+│   └── global-styles.js          # CSS appliable to all project 
+└── stories                       # Component's docs
+```
 
 ### Commands 
 

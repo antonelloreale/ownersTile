@@ -39,6 +39,12 @@ module.exports = {
       default: true,
       message: 'Do you want i18n messages (i.e. will this component use text)?',
     },
+    {
+      type: 'confirm',
+      name: 'addDocumentation',
+      default: true,
+      message: 'Do you want to add this component to the docs?',
+    },
   ],
   actions: data => {
     // Generate index.js and index.test.js
@@ -75,6 +81,16 @@ module.exports = {
         type: 'add',
         path: '../../src/components/{{properCase name}}/messages.js',
         templateFile: './component/messages.js.hbs',
+        abortOnFail: true,
+      });
+    }
+
+    // If they want to add the file at the config
+    if (data.addDocumentation) {
+      actions.push({
+        type: 'add',
+        path: '../../stories/{{lowerCase name}}.stories.js',
+        templateFile: './component/stories.js.hbs',
         abortOnFail: true,
       });
     }
