@@ -3,8 +3,9 @@
 **React JS minimal boilerplate**  based on `rect-create-app`
 
 ___________
-[![BCH compliance](https://bettercodehub.com/edge/badge/fifthbeat/bollitore?branch=master)](https://bettercodehub.com/)
 [![Build Status](https://travis-ci.org/fifthbeat/bollitore.svg?branch=master)](https://travis-ci.org/fifthbeat/bollitore)
+[![BCH compliance](https://bettercodehub.com/edge/badge/fifthbeat/bollitore?branch=master)](https://bettercodehub.com/)
+[![CodeFactor](https://www.codefactor.io/repository/github/fifthbeat/bollitore/badge)](https://www.codefactor.io/repository/github/fifthbeat/bollitore)
 _______
 ## Intro
 This architecture is designed for agencies, the boilerplate provides a fast and reliable base on which build medium size webapps.   
