@@ -1,15 +1,14 @@
 import {injectGlobal} from 'styled-components';
-import colors from './utils/colors';
-import fonts from './utils/fonts';
+import colors from './constants/colors';
+import fonts from './constants/fonts';
 
 injectGlobal`
   html,
   body {
     height: 100%;
     width: 100%;
-    margin: 0;
-    padding: 0;
-    letter-spacing: 0.5px;
+    display: flex;
+    justify-content: center;
   }
 
   *::-webkit-scrollbar {
@@ -28,6 +27,6 @@ injectGlobal`
   }
   
   body {
-    font-family: ${fonts.primary}
+    font-family: ${fonts.primary}, Helvetica, sans-serif;
   }
 `;

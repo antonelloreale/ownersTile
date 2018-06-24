@@ -36,30 +36,28 @@ Here the structure of the global project
 
 ### Commands 
 
-- Start development env
-  ```shell
-  $ yarn start
-  ```
+- Development
+  - Start development env
+    ```shell
+    $ yarn start
+    ```
 
-- Start documentation development env
-  ```shell
-  $ yarn start:docs
-  ```
+  - Start documentation development env
+    ```shell
+    $ yarn start:docs
+    ```
 
-- Build the project for release
-  ```shell
-  $ yarn build
-  ```
+- Building
+  - Build the project for release
+    ```shell
+    $ yarn build
+    ```
 
-- Build the docs for release
-  ```shell
-  $ yarn build:docs
-  ```
+  - Build the docs for release
+    ```shell
+    $ yarn build:docs
+    ```
 
-- Not that much strict eslint
-  ```shell
-  $ yarn lint
-  ```
 - Generators
   - Generates a standard component in `src/components` and, optional, add the component to storybook providing specs and a test env. 
     ```shell
@@ -70,6 +68,11 @@ Here the structure of the global project
     ```shell
     $ yarn generate containers
     ```
+    
+- Linting
+  ```shell
+  $ yarn lint
+  ```
 
 ## Requirements
 
