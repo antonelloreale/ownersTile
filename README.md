@@ -1,4 +1,4 @@
-# Bollitore
+# Bollitore – [![Build Status](https://travis-ci.org/fifthbeat/bollitore.svg?branch=master)](https://travis-ci.org/fifthbeat/bollitore)
 **React JS minimal boilerplate**  based on `rect-create-app`
 
 ## Intro
