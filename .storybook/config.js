@@ -24,6 +24,8 @@ setIntlConfig({
 // addon-info
 setDefaults({
   inline: true,
+  propTablesExclude: ['storybook-exclude'],
+
 });
 
 // Register decorator

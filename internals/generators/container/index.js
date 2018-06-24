@@ -100,52 +100,6 @@ module.exports = {
       });
     }
 
-    // If they want actions and a reducer, generate actions.js, constants.js,
-    // reducer.js and the corresponding tests for actions and the reducer
-    if (data.wantActionsAndReducer) {
-      // Actions
-      actions.push({
-        type: 'add',
-        path: '../../src/containers/{{properCase name}}/actions.js',
-        templateFile: './container/actions.js.hbs',
-        abortOnFail: true,
-      });
-
-      // Constants
-      actions.push({
-        type: 'add',
-        path: '../../src/containers/{{properCase name}}/constants.js',
-        templateFile: './container/constants.js.hbs',
-        abortOnFail: true,
-      });
-
-      // Selectors
-      actions.push({
-        type: 'add',
-        path: '../../src/containers/{{properCase name}}/selectors.js',
-        templateFile: './container/selectors.js.hbs',
-        abortOnFail: true,
-      });
-
-      // Reducer
-      actions.push({
-        type: 'add',
-        path: '../../src/containers/{{properCase name}}/reducer.js',
-        templateFile: './container/reducer.js.hbs',
-        abortOnFail: true,
-      });
-    }
-
-    // Sagas
-    if (data.wantSaga) {
-      actions.push({
-        type: 'add',
-        path: '../../src/containers/{{properCase name}}/saga.js',
-        templateFile: './container/saga.js.hbs',
-        abortOnFail: true,
-      });
-    }
-
     if (data.wantLoadable) {
       actions.push({
         type: 'add',
