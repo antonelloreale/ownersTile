@@ -5,6 +5,7 @@ import StoryRouter from 'storybook-react-router';
 
 import {{ properCase name }} from '../src/components/{{ properCase name }}';
 
+import {Docs} from './styles';
 import '../src/global-styles';
 
 storiesOf('{{ properCase name }}', module)
@@ -17,5 +18,8 @@ storiesOf('{{ properCase name }}', module)
       <{{ properCase name }} />
     ~~~
 
-  `)(() => <{{ properCase name }} />)
+  `)(() => (
+      <Docs>
+        <{{ properCase name }} />
+      </Docs>)
   );
