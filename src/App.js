@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 // Redux Store
 import {Provider} from 'react-redux';
-import {configureStore} from './store';
+import {configureStore} from './stores';
 
 import Routing from './Routing';
 

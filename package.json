@@ -10,7 +10,7 @@
     "generate": "plop --plopfile internals/generators/index.js",
     "flow": "flow",
     "lint": "npm run lint:js",
-    "lint:eslint": "eslint --fix --ignore-path .gitignore --ignore-pattern internals",
+    "lint:eslint": "eslint --fix --ignore-path .gitignore --ignore-pattern internals --ignore-pattern build",
     "lint:js": "npm run lint:eslint -- . ",
     "start:docs": "start-storybook -p 9009 -s public",
     "build:docs": "build-storybook -s public"

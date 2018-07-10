@@ -1,0 +1,24 @@
+export const INIT = '{{ lowerCase name }}/INIT';
+
+export function {{ lowerCase name }}Init(label) {
+  return {
+    type: INIT,
+    label,
+  };
+}
+
+const initialState = {
+  label: 'Hello there!',
+};
+
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case INIT:
+      return {
+        ...state,
+        label: action.label,
+      };
+    default:
+      return state;
+  }
+};
