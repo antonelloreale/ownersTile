@@ -2,24 +2,24 @@ import {defineAsyncAction} from '../../utils/actionTrainer';
 import {call, put, takeEvery} from 'redux-saga/effects';
 import {get} from '../../utils/request';
 
-export const {{ upperCase name }} = defineAsyncAction('{{ upperCase name }}');
+export const USERS = defineAsyncAction('USERS');
 
-export function {{ lowerCase name }}Init() {
+export function usersInit() {
   return {
-    type: {{ upperCase name }}.REQUEST,
+    type: USERS.REQUEST,
   };
 }
 
-export function {{ lowerCase name }}Success(data) {
+export function usersSuccess(data) {
   return {
-    type: {{ upperCase name }}.SUCCESS,
+    type: USERS.SUCCESS,
     data,
   };
 }
 
-export function {{ lowerCase name }}Failed(data) {
+export function usersFailed(data) {
   return {
-    type: {{ upperCase name }}.FAIL,
+    type: USERS.FAIL,
     data,
   };
 }
@@ -32,18 +32,18 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case {{ upperCase name }}.REQUEST:
+    case USERS.REQUEST:
       return {
         ...state,
         loading: true,
       };
-    case {{ upperCase name }}.FAIL:
+    case USERS.FAIL:
       return {
         ...state,
         loading: false,
         loaded: false,
       };
-    case {{ upperCase name }}.SUCCESS:
+    case USERS.SUCCESS:
       return {
         ...state,
         loading: false,
@@ -56,18 +56,18 @@ export default (state = initialState, action) => {
 };
 
 // Sagas
-function* {{ lowerCase name }}Request() {
+function* usersRequest() {
   const requestURL = '';
   const requestOpt = {};
 
   try {
     const data = yield call(get, requestURL, requestOpt);
-    yield put({{ lowerCase name }}Success(data));
+    yield put(usersSuccess(data));
   } catch (err) {
-    yield put({{ lowerCase name }}Failed(err));
+    yield put(usersFailed(err));
   }
 }
 
 export function* sagas() {
-  yield takeEvery({{ upperCase name }}.REQUEST, {{ lowerCase name }}Request);
+  yield takeEvery(USERS.REQUEST, usersRequest);
 }

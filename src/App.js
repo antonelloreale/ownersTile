@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 // Redux Store
 import {Provider} from 'react-redux';
+import {IntlProvider} from 'react-intl';
 import {configureStore} from './stores';
 
 import Routing from './Routing';
@@ -12,9 +13,11 @@ const store = configureStore();
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <Routing />
-      </Provider>
+      <IntlProvider locale="en">
+        <Provider store={store}>
+          <Routing />
+        </Provider>
+      </IntlProvider>
     );
   }
 }
