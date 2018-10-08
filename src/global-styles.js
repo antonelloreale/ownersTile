@@ -1,14 +1,17 @@
-import {injectGlobal} from 'styled-components';
-import colors from './constants/colors';
-import fonts from './constants/fonts';
+import { injectGlobal } from "styled-components";
+import colors from "./constants/colors";
+import fonts from "./constants/fonts";
 
 injectGlobal`
   html,
   body {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    overflow: auto;
   }
 
   *::-webkit-scrollbar {
