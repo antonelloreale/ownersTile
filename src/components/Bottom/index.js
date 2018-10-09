@@ -13,9 +13,17 @@ class Bottom extends React.Component {
     this.state = {};
   }
 
+  // handleClick() {
+  //   console.log("ciao");
+  //   this.setState({ bgColor: "pink" });
+  // }
+
   render() {
     return (
-      <Wrap>
+      <Wrap
+        //onClick={this.handleClick.bind(this)}
+        style={{ backgroundColor: this.state.bgColor }}
+      >
         <Rating rating={this.props.rating} />
         <Address address={this.props.address} />
         <Infos {...this.props.info} />

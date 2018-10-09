@@ -12,9 +12,16 @@ class Tile extends React.Component {
     this.state = {};
   }
 
+  handleClick() {
+    console.log("click");
+    this.setState({ bgColor: "pink" });
+  }
+
   render() {
     return (
-      <Wrap>
+      <Wrap
+      //onClick={this.handleClick.bind(this)}
+      >
         <Top
           foto={this.props.foto}
           num={this.props.num}
@@ -24,6 +31,8 @@ class Tile extends React.Component {
         />
 
         <Bottom
+          onClick={this.handleClick}
+          style={{ backgroundColor: this.state.bgColor }}
           address={this.props.address}
           info={this.props.info}
           rating={this.props.rating}
