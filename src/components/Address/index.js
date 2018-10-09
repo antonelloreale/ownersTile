@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import {Wrap} from './styles';
 
@@ -10,11 +10,14 @@ class Address extends React.Component {
   }
 
   render() {
-    return <Wrap>{this.props.address}</Wrap>;
+    const address = this.props.address;
+    return <Wrap>{address}</Wrap>;
   }
 }
 
-Address.propTypes = {};
+Address.propTypes = {
+  address: PropTypes.string,
+};
 
 Address.defaultProps = {};
 

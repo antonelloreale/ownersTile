@@ -1,8 +1,8 @@
-import React from "react";
-// import PropTypes from 'prop-types';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Wrap } from "./styles";
-import StarRating from "../../components/StarRating";
+import {Wrap} from './styles';
+import StarRating from '../../components/StarRating';
 
 class Rating extends React.Component {
   constructor(props) {
@@ -11,16 +11,19 @@ class Rating extends React.Component {
   }
 
   render() {
+    const rating = this.props.rating;
     return (
       <Wrap>
-        <StarRating rating={this.props.rating} />
+        <StarRating rating={rating} />
         <p>Rating</p>
       </Wrap>
     );
   }
 }
 
-Rating.propTypes = {};
+Rating.propTypes = {
+  rating: PropTypes.number,
+};
 
 Rating.defaultProps = {};
 

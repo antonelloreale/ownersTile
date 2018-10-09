@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import {Wrap} from './styles';
 
@@ -10,16 +10,23 @@ class Infos extends React.Component {
   }
 
   render() {
-    // se metti const ={beds, baths, meters} = this.props eviti di dover scrivere tutte le volte this.props (vale per TUTTI i componenti, lo hai fatto ovunque)
+    const beds = this.props.beds;
+    const baths = this.props.baths;
+    const meters = this.props.meters;
+
     return (
       <Wrap>
-        {this.props.beds} beds, {this.props.baths} baths, {this.props.meters} mq
+        {beds} beds, {baths} baths, {meters} mq
       </Wrap>
     );
   }
 }
 
-Infos.propTypes = {};
+Infos.propTypes = {
+  beds: PropTypes.number,
+  baths: PropTypes.number,
+  meters: PropTypes.number,
+};
 
 Infos.defaultProps = {};
 

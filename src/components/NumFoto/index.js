@@ -1,26 +1,23 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-
+import PropTypes from 'prop-types';
 
 import {Wrap} from './styles';
 
-class NumFoto extends React.Component { 
-
+class NumFoto extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
   render() {
-    return (
-      <Wrap>
-       {this.props.num.length}
-      </Wrap>
-    );
+    const num = this.props.num;
+    return <Wrap>{num.length}</Wrap>;
   }
 }
 
-NumFoto.propTypes = {};
+NumFoto.propTypes = {
+  num: PropTypes.arrayOf(PropTypes.string),
+};
 
 NumFoto.defaultProps = {};
 

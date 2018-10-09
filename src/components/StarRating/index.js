@@ -1,7 +1,7 @@
-import React from "react";
-// import PropTypes from 'prop-types';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Wrap } from "./styles";
+import {Wrap} from './styles';
 
 class StarRating extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class StarRating extends React.Component {
   renderRating = rating => {
     const stars = [];
     const bg = {
-      backgroundColor: `#FFDE59`
+      backgroundColor: `#FFDE59`,
     };
     let j = 0;
     for (let i = 0; i < 4; i++) {
@@ -29,11 +29,14 @@ class StarRating extends React.Component {
   };
 
   render() {
-    return <Wrap>{this.renderRating(this.props.rating)}</Wrap>;
+    const rating = this.props.rating;
+    return <Wrap>{this.renderRating(rating)}</Wrap>;
   }
 }
 
-StarRating.propTypes = {};
+StarRating.propTypes = {
+  rating: PropTypes.number,
+};
 
 StarRating.defaultProps = {};
 

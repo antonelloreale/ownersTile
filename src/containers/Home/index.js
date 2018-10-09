@@ -8,16 +8,13 @@ import owners from './owners_fake_data.json';
 
 export class Home extends React.Component {
   render() {
-    // invece che passare venti props diverse e portarti dietro venti props diverse, non era più sensato
-    // passare un unica prop data e poi andarti a prendere la roba che ti serviva nei singoli componenti?
     const tiles = owners.map(d => (
       <Tile
         address={d.address}
-        status={d.new}
         info={d.info}
         foto={d.pics[0]}
         num={d.pics}
-        new={d.new}
+        banner={d.new}
         price={d.price}
         rating={d.rating}
         key={d.price}
@@ -27,9 +24,14 @@ export class Home extends React.Component {
   }
 }
 
-// Le props vanno mappate. OVUNQUE non le hai mappate da nessuna parte
 Home.propTypes = {
-  label: PropTypes.string,
+  address: PropTypes.string,
+  info: PropTypes.objectOf(PropTypes.number),
+  foto: PropTypes.string,
+  num: PropTypes.arrayOf(PropTypes.string),
+  banner: PropTypes.bool,
+  price: PropTypes.number,
+  rating: PropTypes.number,
 };
 
 function mapStateToProps(state) {

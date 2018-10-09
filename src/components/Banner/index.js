@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import {Wrap} from './styles';
 
@@ -9,7 +9,8 @@ class Banner extends React.Component {
     this.state = {};
   }
   render() {
-    if (this.props.new === true) {
+    const banner = this.props.banner;
+    if (banner === true) {
       return <Wrap> New</Wrap>;
     } else {
       return null;
@@ -17,7 +18,9 @@ class Banner extends React.Component {
   }
 }
 
-Banner.propTypes = {};
+Banner.propTypes = {
+  banner: PropTypes.bool,
+};
 
 Banner.defaultProps = {};
 
