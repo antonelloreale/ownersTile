@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 // import PropTypes from 'prop-types';
 
-import { Wrap } from "./styles";
+import {Wrap} from './styles';
 
 class Banner extends React.Component {
   constructor(props) {

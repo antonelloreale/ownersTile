@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 // import PropTypes from 'prop-types';
 
-import { Wrap } from "./styles";
+import {Wrap} from './styles';
 
-import Top from "../../components/Top";
-import Bottom from "../../components/Bottom";
+import Top from '../../components/Top';
+import Bottom from '../../components/Bottom';
 
 class Tile extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class Tile extends React.Component {
         />
 
         <Bottom
-          style={{ backgroundColor: this.state.bgColor }}
+          style={{backgroundColor: this.state.bgColor}} // questo non serve a nulla se poi stilizzi anche il componente specifico. Senza contare che stai usando styled components, quindi style NON ci deve essere in html.
           address={this.props.address}
           info={this.props.info}
           rating={this.props.rating}
