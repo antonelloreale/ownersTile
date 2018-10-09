@@ -9,12 +9,20 @@ import Bottom from '../../components/Bottom';
 class Tile extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      isClicked: false,
+    };
   }
+
+  handleClick = () => {
+    this.setState(state => ({
+      isClicked: !state.isClicked,
+    }));
+  };
 
   render() {
     return (
-      <Wrap>
+      <Wrap onClick={this.handleClick}>
         <Top
           foto={this.props.foto}
           num={this.props.num}
@@ -23,6 +31,7 @@ class Tile extends React.Component {
         />
 
         <Bottom
+          bgColor={this.state.isClicked}
           address={this.props.address}
           info={this.props.info}
           rating={this.props.rating}

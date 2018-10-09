@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // import colors from '../../constants/colors'
 // import breakpoints from '../../constants/breakpoints'
@@ -7,7 +7,7 @@ import styled from "styled-components";
 export const Wrap = styled.div`
   width: 100%;
   height: 35%;
-  background-color: white;
+  background-color: ${props => (props.bgColor ? 'pink' : 'white')};
   border: 1px solid black;
   border-top: none;
   border-radius: 0 0 5px 5px;
