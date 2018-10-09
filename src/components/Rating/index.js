@@ -11,7 +11,7 @@ class Rating extends React.Component {
   }
 
   render() {
-    const rating = this.props.rating;
+    const {rating} = this.props;
     return (
       <Wrap>
         <StarRating rating={rating} />

@@ -7,7 +7,7 @@ import styled from 'styled-components';
 export const Wrap = styled.div`
   width: 100%;
   height: 35%;
-  background-color: ${props => (props.bgColor ? 'pink' : 'white')};
+  background-color: ${props => (props.isClicked ? 'pink' : 'white')};
   border: 1px solid black;
   border-top: none;
   border-radius: 0 0 5px 5px;

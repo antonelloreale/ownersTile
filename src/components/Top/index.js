@@ -12,11 +12,15 @@ class Top extends React.Component {
   }
 
   render() {
+    const {foto} = this.props;
+    const {price} = this.props;
+    const {num} = this.props;
+    const {banner} = this.props;
     return (
-      <Wrap foto={this.props.foto}>
-        <Prezzo price={this.props.price} num={this.props.num} />
+      <Wrap foto={foto}>
+        <Prezzo price={price} num={num} />
         <div>
-          <Banner banner={this.props.banner} />
+          <Banner banner={banner} />
         </div>
       </Wrap>
     );

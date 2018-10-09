@@ -10,7 +10,7 @@ class NumFoto extends React.Component {
   }
 
   render() {
-    const num = this.props.num;
+    const {num} = this.props;
     return <Wrap>{num.length}</Wrap>;
   }
 }

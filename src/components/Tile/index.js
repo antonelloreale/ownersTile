@@ -21,20 +21,22 @@ class Tile extends React.Component {
   };
 
   render() {
+    const {foto} = this.props;
+    const {num} = this.props;
+    const {banner} = this.props;
+    const {price} = this.props;
+    const {address} = this.props;
+    const {info} = this.props;
+    const {rating} = this.props;
     return (
       <Wrap onClick={this.handleClick}>
-        <Top
-          foto={this.props.foto}
-          num={this.props.num}
-          banner={this.props.banner}
-          price={this.props.price}
-        />
+        <Top foto={foto} num={num} banner={banner} price={price} />
 
         <Bottom
-          bgColor={this.state.isClicked}
-          address={this.props.address}
-          info={this.props.info}
-          rating={this.props.rating}
+          isClicked={this.state.isClicked}
+          address={address}
+          info={info}
+          rating={rating}
         />
       </Wrap>
     );

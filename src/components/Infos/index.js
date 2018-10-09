@@ -10,9 +10,9 @@ class Infos extends React.Component {
   }
 
   render() {
-    const beds = this.props.beds;
-    const baths = this.props.baths;
-    const meters = this.props.meters;
+    const {beds} = this.props;
+    const {baths} = this.props;
+    const {meters} = this.props;
 
     return (
       <Wrap>

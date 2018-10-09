@@ -29,7 +29,7 @@ class StarRating extends React.Component {
   };
 
   render() {
-    const rating = this.props.rating;
+    const {rating} = this.props;
     return <Wrap>{this.renderRating(rating)}</Wrap>;
   }
 }

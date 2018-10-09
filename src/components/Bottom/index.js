@@ -14,18 +14,22 @@ class Bottom extends React.Component {
   }
 
   render() {
+    const {isClicked} = this.props;
+    const {rating} = this.props;
+    const {address} = this.props;
+    const {info} = this.props;
     return (
-      <Wrap bgColor={this.props.bgColor}>
-        <Rating rating={this.props.rating} />
-        <Address address={this.props.address} />
-        <Infos {...this.props.info} />
+      <Wrap isClicked={isClicked}>
+        <Rating rating={rating} />
+        <Address address={address} />
+        <Infos info={info} />
       </Wrap>
     );
   }
 }
 
 Bottom.propTypes = {
-  bgColor: PropTypes.bool,
+  isClicked: PropTypes.bool,
   rating: PropTypes.number,
   address: PropTypes.string,
   info: PropTypes.objectOf(PropTypes.number),

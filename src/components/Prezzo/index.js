@@ -10,11 +10,11 @@ class Prezzo extends React.Component {
   }
 
   render() {
-    const soldi = this.props.price;
-    const num = this.props.num;
+    const {price} = this.props;
+    const {num} = this.props;
     return (
       <Wrap>
-        € {soldi.toLocaleString('it-IT')}
+        € {price.toLocaleString('it-IT')}
         <p>{num.length}</p>
       </Wrap>
     );

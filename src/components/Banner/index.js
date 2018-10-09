@@ -9,7 +9,7 @@ class Banner extends React.Component {
     this.state = {};
   }
   render() {
-    const banner = this.props.banner;
+    const {banner} = this.props;
     if (banner === true) {
       return <Wrap> New</Wrap>;
     } else {
