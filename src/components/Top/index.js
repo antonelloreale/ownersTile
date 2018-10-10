@@ -2,19 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {Wrap} from './styles';
-import Banner from '../../components/Banner';
 import Prezzo from '../../components/Prezzo';
 
-function Top({foto, price, num, banner}) {
+export const Top = props => {
+  function Banner(banner) {
+    if (banner === true) {
+      return <p> New</p>;
+    } else {
+      return null;
+    }
+  }
   return (
-    <Wrap foto={foto}>
-      <Prezzo price={price} num={num} />
-      <div>
-        <Banner banner={banner} />
-      </div>
+    <Wrap foto={props.foto}>
+      <Prezzo price={props.price} num={props.num} />
+      {Banner(props.banner)}
     </Wrap>
   );
-}
+};
 Top.propTypes = {
   foto: PropTypes.string,
   price: PropTypes.number,

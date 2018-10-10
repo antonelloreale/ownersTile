@@ -11,9 +11,17 @@ export const Wrap = styled.div`
   border: 1px solid black;
   border-top: none;
   border-radius: 0 0 5px 5px;
-  line-height: 20px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   position: relative;
+
+  & > p {
+    position: relative;
+    margin: 0;
+    padding: 10px 0 0 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: #303030;
+  }
 `;

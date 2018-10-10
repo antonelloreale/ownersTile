@@ -5,12 +5,6 @@ import styled from 'styled-components';
 // import fonts from '../../constants/fonts'
 
 export const Wrap = styled.div`
-  & > div {
-    display: flex;
-    position: relative;
-    z-index: 1;
-  }
-
   width: 100%;
   height: 65%;
   position: relative;
@@ -36,5 +30,21 @@ export const Wrap = styled.div`
       rgba(238, 238, 238, 0) 0%,
       #000000 100%
     );
+  }
+  & > p {
+    width: 38px;
+    height: 18px;
+    background: #4bd385;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    position: relative;
+    margin: 0 0 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
   }
 `;

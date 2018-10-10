@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import {Wrap} from './styles';
 
-function Rating({rating}) {
-  function renderRating({rating}) {
+export const Rating = props => {
+  function renderRating(rating) {
     const stars = [];
     const bg = {
       backgroundColor: `#FFDE59`,
@@ -24,11 +24,11 @@ function Rating({rating}) {
 
   return (
     <Wrap>
-      {renderRating({rating})}
+      {renderRating(props.rating)}
       <p>Rating</p>
     </Wrap>
   );
-}
+};
 
 Rating.propTypes = {
   rating: PropTypes.number,

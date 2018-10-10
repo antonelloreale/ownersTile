@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 import {Wrap} from './styles';
 
-function Infos({info}) {
+export const Infos = props => {
   return (
     <Wrap>
-      {info.beds} beds, {info.baths} baths, {info.meters} mq
+      {props.info.beds} beds, {props.info.baths} baths, {props.info.meters} mq
     </Wrap>
   );
-}
+};
 
 Infos.propTypes = {
   info: PropTypes.objectOf(PropTypes.number),

@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 import {Wrap} from './styles';
 
-function Prezzo({price, num}) {
+export const Prezzo = props => {
   return (
     <Wrap>
-      € {price.toLocaleString('it-IT')}
-      <p>{num.length}</p>
+      € {props.price.toLocaleString('it-IT')}
+      <p>{props.num.length}</p>
     </Wrap>
   );
-}
+};
 
 Prezzo.propTypes = {
   price: PropTypes.number,

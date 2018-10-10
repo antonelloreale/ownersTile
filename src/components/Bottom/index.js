@@ -3,19 +3,18 @@ import PropTypes from 'prop-types';
 
 import {Wrap} from './styles';
 
-import Address from '../../components/Address';
 import Infos from '../../components/Infos';
 import Rating from '../../components/Rating';
 
-function Bottom({isClicked, rating, address, info}) {
+export const Bottom = props => {
   return (
-    <Wrap isClicked={isClicked}>
-      <Rating rating={rating} />
-      <Address address={address} />
-      <Infos info={info} />
+    <Wrap isClicked={props.isClicked}>
+      <Rating rating={props.rating} />
+      <p>{props.address}</p>
+      <Infos info={props.info} />
     </Wrap>
   );
-}
+};
 
 Bottom.propTypes = {
   isClicked: PropTypes.bool,
