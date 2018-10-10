@@ -3,18 +3,11 @@ import PropTypes from 'prop-types';
 
 import {Wrap} from './styles';
 
-class Banner extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
-    const {banner} = this.props;
-    if (banner === true) {
-      return <Wrap> New</Wrap>;
-    } else {
-      return null;
-    }
+function Banner({banner}) {
+  if (banner === true) {
+    return <Wrap> New</Wrap>;
+  } else {
+    return null;
   }
 }
 

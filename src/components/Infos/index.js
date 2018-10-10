@@ -3,27 +3,16 @@ import PropTypes from 'prop-types';
 
 import {Wrap} from './styles';
 
-class Infos extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const {beds, baths, meters} = this.props;
-
-    return (
-      <Wrap>
-        {beds} beds, {baths} baths, {meters} mq
-      </Wrap>
-    );
-  }
+function Infos({info}) {
+  return (
+    <Wrap>
+      {info.beds} beds, {info.baths} baths, {info.meters} mq
+    </Wrap>
+  );
 }
 
 Infos.propTypes = {
-  beds: PropTypes.number,
-  baths: PropTypes.number,
-  meters: PropTypes.number,
+  info: PropTypes.objectOf(PropTypes.number),
 };
 
 Infos.defaultProps = {};

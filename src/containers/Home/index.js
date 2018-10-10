@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
 import {Wrap} from './styles';
 
 import Tile from '../../components/Tile';
@@ -17,7 +16,7 @@ export class Home extends React.Component {
         banner={d.new}
         price={d.price}
         rating={d.rating}
-        key={d.price}
+        key={`tile_${d.price}`}
       />
     ));
     return <Wrap>{tiles}</Wrap>;
@@ -34,10 +33,4 @@ Home.propTypes = {
   rating: PropTypes.number,
 };
 
-function mapStateToProps(state) {
-  return {
-    label: state.home.label,
-  };
-}
-
-export default connect(mapStateToProps)(Home);
+export default Home;

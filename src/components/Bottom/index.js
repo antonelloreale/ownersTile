@@ -7,25 +7,14 @@ import Address from '../../components/Address';
 import Infos from '../../components/Infos';
 import Rating from '../../components/Rating';
 
-class Bottom extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const {isClicked} = this.props;
-    const {rating} = this.props;
-    const {address} = this.props;
-    const {info} = this.props;
-    return (
-      <Wrap isClicked={isClicked}>
-        <Rating rating={rating} />
-        <Address address={address} />
-        <Infos info={info} />
-      </Wrap>
-    );
-  }
+function Bottom({isClicked, rating, address, info}) {
+  return (
+    <Wrap isClicked={isClicked}>
+      <Rating rating={rating} />
+      <Address address={address} />
+      <Infos info={info} />
+    </Wrap>
+  );
 }
 
 Bottom.propTypes = {

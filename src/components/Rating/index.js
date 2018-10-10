@@ -2,23 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {Wrap} from './styles';
-import StarRating from '../../components/StarRating';
 
-class Rating extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+function Rating({rating}) {
+  function renderRating({rating}) {
+    const stars = [];
+    const bg = {
+      backgroundColor: `#FFDE59`,
+    };
+    let j = 0;
+    for (let i = 0; i < 4; i++) {
+      if (j < rating) {
+        j++;
+        stars.push(<div key={`stella_${i}`} style={bg} />);
+      } else {
+        j++;
+        stars.push(<div key={`stella_${i}`} />);
+      }
+    }
+    return stars;
   }
 
-  render() {
-    const {rating} = this.props;
-    return (
-      <Wrap>
-        <StarRating rating={rating} />
-        <p>Rating</p>
-      </Wrap>
-    );
-  }
+  return (
+    <Wrap>
+      {renderRating({rating})}
+      <p>Rating</p>
+    </Wrap>
+  );
 }
 
 Rating.propTypes = {

@@ -21,13 +21,7 @@ class Tile extends React.Component {
   };
 
   render() {
-    const {foto} = this.props;
-    const {num} = this.props;
-    const {banner} = this.props;
-    const {price} = this.props;
-    const {address} = this.props;
-    const {info} = this.props;
-    const {rating} = this.props;
+    const {foto, num, banner, price, address, info, rating} = this.props;
     return (
       <Wrap onClick={this.handleClick}>
         <Top foto={foto} num={num} banner={banner} price={price} />

@@ -3,16 +3,8 @@ import PropTypes from 'prop-types';
 
 import {Wrap} from './styles';
 
-class Address extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const {address} = this.props;
-    return <Wrap>{address}</Wrap>;
-  }
+function Address({address}) {
+  return <Wrap>{address}</Wrap>;
 }
 
 Address.propTypes = {

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // import colors from '../../constants/colors'
 // import breakpoints from '../../constants/breakpoints'
@@ -13,8 +13,8 @@ export const Wrap = styled.div`
     border-radius: 3px 1px;
     margin: 6px 0 6px 5px;
   } */
-  width: 155px;
-  height: 18px;
+  min-width: 155px;
+  min-height: 18px;
   background-color: #00bb6f;
   border-radius: 2px;
   position: absolute;
@@ -23,16 +23,23 @@ export const Wrap = styled.div`
   font-size: 11px;
   font-weight: 600;
   text-align: right;
-  line-height: 16px;
-  padding: 2px 4px 0 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   text-align: right;
-
   & > p {
-    width: 100%;
     position: relative;
-    padding: 2px 5px;
+    width: 100%;
+    margin: 0;
+    padding: 0 6px 0 0;
+    z-index: 1;
+  }
+  & > div {
+    min-width: 10px;
+    min-height: 6px;
+    position: relative;
+    border: 1px solid #ffde59;
+    border-radius: 3px 1px;
+    margin: 6px 0 6px 5px;
   }
 `;
