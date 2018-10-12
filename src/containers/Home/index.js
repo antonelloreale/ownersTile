@@ -4,22 +4,44 @@ import {Wrap} from './styles';
 
 import Tile from '../../components/Tile';
 import owners from './owners_fake_data.json';
+import AddButton from '../../components/AddButton';
 
 export class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      clickBtn: 0,
+    };
+  }
   render() {
-    const tiles = owners.map(d => (
-      <Tile
-        address={d.address}
-        info={d.info}
-        foto={d.pics[0]}
-        num={d.pics}
-        banner={d.new}
-        price={d.price}
-        rating={d.rating}
-        key={`tile_${d.price}`}
-      />
-    ));
-    return <Wrap>{tiles}</Wrap>;
+    let tile = owners.map(function(d) {
+      return d;
+    });
+
+    const handleClickBtn = () => {
+      this.setState({
+        clickBtn: this.state.clickBtn + 1,
+      });
+      if (this.state.clickBtn < tile.length) {
+        console.log(this.state.clickBtn);
+        return (
+          <Tile
+            address={tile[this.state.clickBtn].address}
+            info={tile[this.state.clickBtn].info}
+            rating={tile[this.state.clickBtn].rating}
+            foto={tile[this.state.clickBtn].pics[0]}
+            num={tile[this.state.clickBtn].pics}
+            banner={tile[this.state.clickBtn].banner}
+            price={tile[this.state.clickBtn].price}
+          />
+        );
+      }
+    };
+    return (
+      <Wrap>
+        <AddButton onClick={handleClickBtn} clickBtn={this.state.clickBtn} />
+      </Wrap>
+    );
   }
 }
 

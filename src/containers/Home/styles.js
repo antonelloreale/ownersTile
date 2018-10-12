@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 export const Wrap = styled.div`
-  display: flex;
-  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  & > div {
+    display: grid;
+    grid-template-columns: 250px 250px 250px;
+    grid-gap: 10px;
+  }
 `;

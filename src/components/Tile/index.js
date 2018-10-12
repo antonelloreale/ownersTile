@@ -10,13 +10,13 @@ class Tile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isClicked: false,
+      bgColor: false,
     };
   }
 
   handleClick = () => {
     this.setState(state => ({
-      isClicked: !state.isClicked,
+      bgColor: !state.bgColor,
     }));
   };
 
@@ -27,7 +27,7 @@ class Tile extends React.Component {
         <Top foto={foto} num={num} banner={banner} price={price} />
 
         <Bottom
-          isClicked={this.state.isClicked}
+          bgColor={this.state.bgColor}
           address={address}
           info={info}
           rating={rating}

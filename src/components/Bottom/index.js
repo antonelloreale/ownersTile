@@ -8,7 +8,7 @@ import Rating from '../../components/Rating';
 
 export const Bottom = props => {
   return (
-    <Wrap isClicked={props.isClicked}>
+    <Wrap bgColor={props.bgColor}>
       <Rating rating={props.rating} />
       <p>{props.address}</p>
       <Infos info={props.info} />
@@ -17,7 +17,7 @@ export const Bottom = props => {
 };
 
 Bottom.propTypes = {
-  isClicked: PropTypes.bool,
+  bgColor: PropTypes.bool,
   rating: PropTypes.number,
   address: PropTypes.string,
   info: PropTypes.objectOf(PropTypes.number),
