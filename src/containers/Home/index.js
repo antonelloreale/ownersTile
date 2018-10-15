@@ -19,41 +19,33 @@ export class Home extends React.Component {
     });
 
     const handleClickBtn = () => {
-      this.setState({
-        clickBtn: this.state.clickBtn + 1,
-      });
-      // if (this.state.clickBtn < tile.length) {
-      //   console.log(this.state.clickBtn);
-      //   return (
-      //     <Tile
-      //       address={tile[this.state.clickBtn].address}
-      //       info={tile[this.state.clickBtn].info}
-      //       rating={tile[this.state.clickBtn].rating}
-      //       foto={tile[this.state.clickBtn].pics[0]}
-      //       num={tile[this.state.clickBtn].pics}
-      //       banner={tile[this.state.clickBtn].banner}
-      //       price={tile[this.state.clickBtn].price}
-      //     />
-      //   );
-      // }
+      if (this.state.clickBtn < tile.length) {
+        this.setState({
+          clickBtn: this.state.clickBtn + 1,
+        });
+      }
     };
     function renderTile(clickBtn) {
       let tilesArr = [];
-      if (clickBtn < tile.length) {
-        tilesArr.push(
-          <Tile
-            address={tile[clickBtn].address}
-            info={tile[clickBtn].info}
-            rating={tile[clickBtn].rating}
-            foto={tile[clickBtn].pics[0]}
-            num={tile[clickBtn].pics}
-            banner={tile[clickBtn].banner}
-            price={tile[clickBtn].price}
-          />
-        );
+      for (let i = 0; i < tile.length; i++) {
+        if (clickBtn < tile.length) {
+          tilesArr.push(
+            <Tile
+              address={tile[clickBtn].address}
+              info={tile[clickBtn].info}
+              rating={tile[clickBtn].rating}
+              foto={tile[clickBtn].pics[0]}
+              num={tile[clickBtn].pics}
+              banner={tile[clickBtn].banner}
+              price={tile[clickBtn].price}
+              key={`tile_${tile[clickBtn.price]}`}
+            />
+          );
+        }
         return tilesArr;
       }
     }
+    console.log('home', this.state.clickBtn);
     return (
       <Wrap>
         <AddButton onClick={handleClickBtn} clickBtn={this.state.clickBtn} />

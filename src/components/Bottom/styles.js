@@ -14,7 +14,9 @@ export const Wrap = styled.div`
   padding: 20px;
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 
   & > p {
     position: relative;

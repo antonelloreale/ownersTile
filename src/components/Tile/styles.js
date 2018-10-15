@@ -11,4 +11,5 @@ export const Wrap = styled.div`
   flex-direction: column;
   background-color: yellow;
   border-radius: 5px;
+  position: relative;
 `;
