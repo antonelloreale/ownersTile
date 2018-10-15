@@ -22,24 +22,42 @@ export class Home extends React.Component {
       this.setState({
         clickBtn: this.state.clickBtn + 1,
       });
-      if (this.state.clickBtn < tile.length) {
-        console.log(this.state.clickBtn);
-        return (
+      // if (this.state.clickBtn < tile.length) {
+      //   console.log(this.state.clickBtn);
+      //   return (
+      //     <Tile
+      //       address={tile[this.state.clickBtn].address}
+      //       info={tile[this.state.clickBtn].info}
+      //       rating={tile[this.state.clickBtn].rating}
+      //       foto={tile[this.state.clickBtn].pics[0]}
+      //       num={tile[this.state.clickBtn].pics}
+      //       banner={tile[this.state.clickBtn].banner}
+      //       price={tile[this.state.clickBtn].price}
+      //     />
+      //   );
+      // }
+    };
+    function renderTile(clickBtn) {
+      let tilesArr = [];
+      if (clickBtn < tile.length) {
+        tilesArr.push(
           <Tile
-            address={tile[this.state.clickBtn].address}
-            info={tile[this.state.clickBtn].info}
-            rating={tile[this.state.clickBtn].rating}
-            foto={tile[this.state.clickBtn].pics[0]}
-            num={tile[this.state.clickBtn].pics}
-            banner={tile[this.state.clickBtn].banner}
-            price={tile[this.state.clickBtn].price}
+            address={tile[clickBtn].address}
+            info={tile[clickBtn].info}
+            rating={tile[clickBtn].rating}
+            foto={tile[clickBtn].pics[0]}
+            num={tile[clickBtn].pics}
+            banner={tile[clickBtn].banner}
+            price={tile[clickBtn].price}
           />
         );
+        return tilesArr;
       }
-    };
+    }
     return (
       <Wrap>
         <AddButton onClick={handleClickBtn} clickBtn={this.state.clickBtn} />
+        {renderTile(this.state.clickBtn)}
       </Wrap>
     );
   }
