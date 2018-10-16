@@ -4,7 +4,8 @@ export const Wrap = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 250px 250px 250px;
+  grid-template-columns: repeat(3, 250px);
+  grid-template-rows: 340px;
   grid-gap: 10px;
   align-items: flex-start;
   & > div {

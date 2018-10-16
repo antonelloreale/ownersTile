@@ -16,9 +16,12 @@ export class Home extends React.PureComponent {
   handleClickBtn = () => {
     const {tile} = this.state;
     let tileTmp = [...tile];
-    let ownersTmp = {...owners};
-    ownersTmp.price = this.randomPrice(100000, 1000000);
-    tileTmp.unshift(ownersTmp);
+    let ownersTmp = {
+      ...owners,
+      price: this.randomPrice(100000, 1000000),
+    };
+
+    tileTmp.push(ownersTmp);
     this.setState({
       tile: [...tileTmp],
     });
