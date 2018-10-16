@@ -4,52 +4,43 @@ import {Wrap} from './styles';
 
 import Tile from '../../components/Tile';
 import owners from './owners_fake_data.json';
-import AddButton from '../../components/AddButton';
 
-export class Home extends React.Component {
+export class Home extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      clickBtn: 0,
+      tile: [],
     };
   }
-  render() {
-    let tile = owners.map(function(d) {
-      return d;
-    });
 
-    const handleClickBtn = () => {
-      if (this.state.clickBtn < tile.length) {
-        this.setState({
-          clickBtn: this.state.clickBtn + 1,
-        });
-      }
-    };
-    function renderTile(clickBtn) {
-      let tilesArr = [];
-      for (let i = 0; i < tile.length; i++) {
-        if (clickBtn < tile.length) {
-          tilesArr.push(
-            <Tile
-              address={tile[clickBtn].address}
-              info={tile[clickBtn].info}
-              rating={tile[clickBtn].rating}
-              foto={tile[clickBtn].pics[0]}
-              num={tile[clickBtn].pics}
-              banner={tile[clickBtn].banner}
-              price={tile[clickBtn].price}
-              key={`tile_${tile[clickBtn.price]}`}
-            />
-          );
-        }
-        return tilesArr;
-      }
-    }
-    console.log('home', this.state.clickBtn);
+  handleClickBtn = () => {
+    const {tile} = this.state;
+    let tileTmp = [...tile];
+    tileTmp.push(owners);
+    this.setState({
+      tile: [...tileTmp],
+    });
+  };
+
+  adder = tiles =>
+    tiles.map((d, i) => (
+      <Tile
+        address={d.address}
+        foto={d.pics[0]}
+        num={d.pics}
+        banner={d.new}
+        info={d.info}
+        price={d.price}
+        rating={d.rating}
+        key={`tile_${i}`}
+      />
+    ));
+
+  render() {
     return (
       <Wrap>
-        <AddButton onClick={handleClickBtn} clickBtn={this.state.clickBtn} />
-        {renderTile(this.state.clickBtn)}
+        <button onClick={this.handleClickBtn}>Add</button>
+        {this.adder(this.state.tile)}
       </Wrap>
     );
   }
