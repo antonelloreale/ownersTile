@@ -16,7 +16,9 @@ export class Home extends React.PureComponent {
   handleClickBtn = () => {
     const {tile} = this.state;
     let tileTmp = [...tile];
-    tileTmp.push(owners);
+    let ownersTmp = {...owners};
+    ownersTmp.price = this.randomPrice(100000, 1000000);
+    tileTmp.unshift(ownersTmp);
     this.setState({
       tile: [...tileTmp],
     });
@@ -36,7 +38,7 @@ export class Home extends React.PureComponent {
         num={d.pics}
         banner={d.new}
         info={d.info}
-        price={this.randomPrice(100000, 1000000)}
+        price={d.price}
         rating={d.rating}
         key={`tile_${i}`}
       />
