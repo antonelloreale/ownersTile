@@ -36,7 +36,7 @@ export class Home extends React.PureComponent {
         num={d.pics}
         banner={d.new}
         info={d.info}
-        price={d.price}
+        price={this.randomPrice(100000, 1000000)}
         rating={d.rating}
         key={`tile_${i}`}
       />
