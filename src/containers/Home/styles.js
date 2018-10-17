@@ -9,6 +9,13 @@ export const Wrap = styled.div`
   grid-gap: 10px;
   align-items: flex-start;
   padding: 50px 20px 20px 20px;
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(2, 250px);
+  }
+  @media (max-width: 550px) {
+    grid-template-columns: 250px;
+  }
   & > div {
     display: flex;
   }
@@ -30,6 +37,9 @@ export const Wrap = styled.div`
   & > input {
     position: absolute;
     top: 10px;
-    left: 50%;
+    left: 30px;
+    height: 30px;
+    border-radius: 3px;
+    font-size: 15px;
   }
 `;

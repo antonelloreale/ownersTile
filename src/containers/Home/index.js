@@ -57,12 +57,7 @@ export class Home extends React.PureComponent {
   render() {
     return (
       <Wrap>
-        <input
-          type="number"
-          placeholder="multipli di 3"
-          min="0"
-          onChange={this.setNum}
-        />
+        <input type="number" min="0" onChange={this.setNum} />
         <button onClick={this.handleClickBtn}>Add</button>
         {this.adder(this.state.tile)}
       </Wrap>
