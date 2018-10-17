@@ -10,6 +10,7 @@ export class Home extends React.PureComponent {
     super(props);
     this.state = {
       tile: [],
+      numTile: '',
     };
   }
 
@@ -20,11 +21,17 @@ export class Home extends React.PureComponent {
       ...owners,
       price: this.randomPrice(100000, 1000000),
     };
-
-    tileTmp.push(ownersTmp);
+    tileTmp.unshift(ownersTmp);
+    if (tileTmp.length > this.state.numTile) {
+      tileTmp.pop();
+    }
     this.setState({
       tile: [...tileTmp],
     });
+  };
+
+  setNum = e => {
+    this.setState({numTile: e.target.value});
   };
 
   randomPrice = (min, max) => {
@@ -50,6 +57,12 @@ export class Home extends React.PureComponent {
   render() {
     return (
       <Wrap>
+        <input
+          type="number"
+          placeholder="multipli di 3"
+          min="0"
+          onChange={this.setNum}
+        />
         <button onClick={this.handleClickBtn}>Add</button>
         {this.adder(this.state.tile)}
       </Wrap>

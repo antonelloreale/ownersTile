@@ -8,6 +8,7 @@ export const Wrap = styled.div`
   grid-template-rows: 340px;
   grid-gap: 10px;
   align-items: flex-start;
+  padding: 50px 20px 20px 20px;
   & > div {
     display: flex;
   }
@@ -25,5 +26,10 @@ export const Wrap = styled.div`
     justify-content: center;
     align-items: center;
     z-index: 999;
+  }
+  & > input {
+    position: absolute;
+    top: 10px;
+    left: 50%;
   }
 `;
