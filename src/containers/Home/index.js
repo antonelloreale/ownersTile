@@ -10,9 +10,16 @@ export class Home extends React.PureComponent {
     super(props);
     this.state = {
       tile: [],
-      numTile: '',
+      numTile: 0,
+      page: 0,
     };
   }
+
+  handleChangePgn = e => {
+    this.setState({
+      page: Number(e.target.id),
+    });
+  };
 
   handleClickBtn = () => {
     const {tile} = this.state;
@@ -22,12 +29,18 @@ export class Home extends React.PureComponent {
       price: this.randomPrice(100000, 1000000),
     };
     tileTmp.unshift(ownersTmp);
-    if (tileTmp.length > this.state.numTile) {
-      tileTmp.pop();
-    }
     this.setState({
       tile: [...tileTmp],
     });
+  };
+  divide = (arr, pieces) => {
+    let groups = [],
+      i,
+      arrayLength = arr.length;
+    for (i = 0; i < arrayLength; i += pieces) {
+      groups.push(arr.slice(i, i + pieces));
+    }
+    return groups;
   };
 
   setNum = e => {
@@ -38,6 +51,20 @@ export class Home extends React.PureComponent {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+
+  buttonAdder = nbr => {
+    const btns = [];
+    let j = 1;
+    for (let i = 0; i < nbr; i++) {
+      btns.push(
+        <button key={`btn_${i}`} id={i} onClick={this.handleChangePgn}>
+          {j}
+        </button>
+      );
+      j++;
+    }
+    return btns;
   };
 
   adder = tiles =>
@@ -55,11 +82,17 @@ export class Home extends React.PureComponent {
     ));
 
   render() {
+    const {tile, numTile, page} = this.state;
+    const splitted = this.divide(tile, parseInt(numTile, 10));
+    console.log('home', splitted);
     return (
       <Wrap>
         <input type="number" min="0" onChange={this.setNum} />
         <button onClick={this.handleClickBtn}>Add</button>
-        {this.adder(this.state.tile)}
+        {tile.length !== undefined && tile.length !== 0
+          ? this.adder(splitted[page])
+          : null}
+        <p>{this.buttonAdder(splitted.length)}</p>
       </Wrap>
     );
   }

@@ -16,9 +16,24 @@ export const Wrap = styled.div`
   @media (max-width: 550px) {
     grid-template-columns: 250px;
   }
-  & > div {
+  & > p {
     display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    padding: 10px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+
+    & > button {
+      position: relative;
+      min-height: 20px;
+      font-size: 10px;
+      margin: 0 5px;
+    }
   }
+
   & > button {
     min-width: 60px;
     min-height: 30px;

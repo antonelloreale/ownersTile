@@ -1,12 +1,12 @@
-import { injectGlobal } from "styled-components";
-import colors from "./constants/colors";
-import fonts from "./constants/fonts";
+import {injectGlobal} from 'styled-components';
+import colors from './constants/colors';
+import fonts from './constants/fonts';
 
 injectGlobal`
   html,
   body {
     min-height: 100%;
-    width: 100%;
+    min-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
