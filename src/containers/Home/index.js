@@ -84,7 +84,6 @@ export class Home extends React.PureComponent {
   render() {
     const {tile, numTile, page} = this.state;
     const splitted = this.divide(tile, parseInt(numTile, 10));
-    console.log('home', splitted);
     return (
       <Wrap>
         <input type="number" min="0" onChange={this.setNum} />
